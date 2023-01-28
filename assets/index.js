@@ -15,7 +15,7 @@ insertDate.innerHTML = date;
 //if currentTime < time then .future
 //function to change color of textarea based on time
 //No current errors but not working
-function timeBlockColors () {
+/*function timeBlockColors () {
     function chameleon () {
         let currentTime = moment().hour();
         let time = parseInt($(this).attr('id'));
@@ -29,9 +29,29 @@ function timeBlockColors () {
         }
     }
 
-    $('.description').each(chameleon());
+    $('textarea').each(chameleon());
+}*/
+//Do I need this?
+$(document).ready(() => {
+
+});
+//Want to compare first object to each id object
+function timeBlockColors () {
+    let currentTime = moment().hour();
+    $('textarea').each(function () {
+        let time = parseInt($(this).attr('id'));
+        console.log($(this));
+        if (currentTime > time) {
+            $(this).addClass('past');
+        } else if (currentTime === time) {
+            $(this).addClass('present');
+        } else {
+            $(this).addClass('future');
+        }
+    });
 }
 
+timeBlockColors();
 //When I click on a time block, I can enter an event
 
 //When I click the save button the text is saved in local storage
