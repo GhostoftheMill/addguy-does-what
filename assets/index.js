@@ -9,32 +9,16 @@ let insertDate = document.getElementById('currentDay');
 //Inserts current date into HTML
 insertDate.innerHTML = date;
 
+
+//Do I need this?
+$(document).ready(() => {
+
+});
 //Each time block is color-coded to indicate whether it is in the past, present, or future (already in CSS)
 //if currentTime > time then .past
 //if currentTime = time then .present
 //if currentTime < time then .future
 //function to change color of textarea based on time
-//No current errors but not working
-/*function timeBlockColors () {
-    function chameleon () {
-        let currentTime = moment().hour();
-        let time = parseInt($(this).attr('id'));
-
-        if (currentTime > time) {
-            $(this).addClass('past');
-        } else if (currentTime === time) {
-            $(this).addClass('present');
-        } else {
-            $(this).addClass('future');
-        }
-    }
-
-    $('textarea').each(chameleon());
-}*/
-//Do I need this?
-$(document).ready(() => {
-
-});
 //Want to compare first object to each id object
 function timeBlockColors () {
     let currentTime = moment().hour();
@@ -52,8 +36,19 @@ function timeBlockColors () {
 }
 
 timeBlockColors();
-//When I click on a time block, I can enter an event
 
 //When I click the save button the text is saved in local storage
-//localStorage.setItem(,)
+function storeInfo () {
+    let saveBtn = $('.saveBtn');
+    saveBtn.on('click', () => {
+        let time = $(this).siblings('.hour').val();
+        let content = $(this).siblings('.description').val();
+      })
+}
+storeInfo();
+localStorage.getItem(time, content);
+
+
+
+
 //When I refresh the page the saved events persist
