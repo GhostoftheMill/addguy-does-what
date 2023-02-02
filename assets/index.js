@@ -43,12 +43,15 @@ function storeInfo () {
     saveBtn.on('click', () => {
         let time = $(this).siblings('.hour').val();
         let content = $(this).siblings('.description').val();
+        localStorage.setItem(time, content);
       })
 }
+
 storeInfo();
-localStorage.getItem(time, content);
 
-
-
-
+function fetchInfo () {
+   $('.hour').each(localStorage.getItem($(this).val()));
+}
 //When I refresh the page the saved events persist
+fetchInfo();
+console.log(fetchInfo());
