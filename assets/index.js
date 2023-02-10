@@ -38,27 +38,30 @@ timeBlockColors();
 
 //When I click the save button the text is saved in local storage
 //Having trouble setting time key for local storage.
+//Tried just setting code outside function but didn't work.
 function storeInfo () {
     $('.saveBtn').on('click', () => {
-        let time = $(this).parent.attr('id');
+        let time = $(this).parent().attr('id');
         //console.log($(this).siblings('.hour').attr('id'));
         let content = $(this).siblings('.description').val();
         //console.log($('.saveBtn').siblings('.description').val());
         localStorage.setItem(time, content);
+        console.log(time, content);
 
       });
 }
 
-
-
 storeInfo();
-
-$()
-
-
-/*function fetchInfo () {
-  
-}
+//Get the info
 //When I refresh the page the saved events persist
-fetchInfo();*/
+$("#A .description").val(localStorage.getItem("A"));
+$("#B .description").val(localStorage.getItem("B"));
+$("#C .description").val(localStorage.getItem("C"));
+$("#D .description").val(localStorage.getItem("D"));
+$("#E .description").val(localStorage.getItem("E"));
+$("#F .description").val(localStorage.getItem("F"));
+$("#G .description").val(localStorage.getItem("G"));
+$("#H .description").val(localStorage.getItem("H"));
+$("#I .description").val(localStorage.getItem("I"));
+
 });
