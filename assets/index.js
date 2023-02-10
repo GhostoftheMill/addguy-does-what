@@ -13,7 +13,7 @@ insertDate.innerHTML = date;
 //Do I need this?
 $(document).ready(() => {
 
-});
+
 //Each time block is color-coded to indicate whether it is in the past, present, or future (already in CSS)
 //if currentTime > time then .past
 //if currentTime = time then .present
@@ -24,7 +24,6 @@ function timeBlockColors () {
     let currentTime = moment().hour();
     $('textarea').each(function () {
         let time = parseInt($(this).attr('id'));
-        console.log($(this));
         if (currentTime > time) {
             $(this).addClass('past');
         } else if (currentTime === time) {
@@ -38,20 +37,28 @@ function timeBlockColors () {
 timeBlockColors();
 
 //When I click the save button the text is saved in local storage
+//Having trouble setting time key for local storage.
 function storeInfo () {
-    let saveBtn = $('.saveBtn');
-    saveBtn.on('click', () => {
-        let time = $(this).siblings('.hour').val();
+    $('.saveBtn').on('click', () => {
+        let time = $(this).parent.attr('id');
+        //console.log($(this).siblings('.hour').attr('id'));
         let content = $(this).siblings('.description').val();
+        //console.log($('.saveBtn').siblings('.description').val());
         localStorage.setItem(time, content);
-      })
+
+      });
 }
+
+
 
 storeInfo();
 
-function fetchInfo () {
-   $('.hour').each(localStorage.getItem($(this).val()));
+$()
+
+
+/*function fetchInfo () {
+  
 }
 //When I refresh the page the saved events persist
-fetchInfo();
-console.log(fetchInfo());
+fetchInfo();*/
+});
