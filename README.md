@@ -8,7 +8,7 @@ This is a simple calendar app for scheduling your workday. jQuery is used to sto
 
 ## Access
 
-[Work Day Scheduler](https://scribble-script.herokuapp.com/)
+[Work Day Scheduler](https://ghostofthemill.github.io/addguy-does-what/)
 
 ## Creator
 
