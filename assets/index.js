@@ -9,8 +9,6 @@ let insertDate = document.getElementById('currentDay');
 //Inserts current date into HTML
 insertDate.innerHTML = date;
 
-
-//Do I need this?
 $(document).ready(() => {
 
 
@@ -39,29 +37,31 @@ timeBlockColors();
 //When I click the save button the text is saved in local storage
 //Having trouble setting time key for local storage.
 //Tried just setting code outside function but didn't work.
-function storeInfo () {
-    $('.saveBtn').on('click', () => {
+//function storeInfo () {
+    $('.saveBtn').on('click', function() {
         let time = $(this).parent().attr('id');
         //console.log($(this).siblings('.hour').attr('id'));
         let content = $(this).siblings('.description').val();
         //console.log($('.saveBtn').siblings('.description').val());
-        localStorage.setItem(time, content);
+        console.log('abc');
         console.log(time, content);
+        localStorage.setItem(time, content);
+    
 
       });
-}
+//}
 
-storeInfo();
+//storeInfo();
 //Get the info
 //When I refresh the page the saved events persist
-$("#A .description").val(localStorage.getItem("A"));
-$("#B .description").val(localStorage.getItem("B"));
-$("#C .description").val(localStorage.getItem("C"));
-$("#D .description").val(localStorage.getItem("D"));
-$("#E .description").val(localStorage.getItem("E"));
-$("#F .description").val(localStorage.getItem("F"));
-$("#G .description").val(localStorage.getItem("G"));
-$("#H .description").val(localStorage.getItem("H"));
-$("#I .description").val(localStorage.getItem("I"));
+$("#A .description").val(localStorage.getItem('A'));
+$("#B .description").val(localStorage.getItem('B'));
+$("#C .description").val(localStorage.getItem('C'));
+$("#D .description").val(localStorage.getItem('D'));
+$("#E .description").val(localStorage.getItem('E'));
+$("#F .description").val(localStorage.getItem('F'));
+$("#G .description").val(localStorage.getItem('G'));
+$("#H .description").val(localStorage.getItem('H'));
+$("#I .description").val(localStorage.getItem('I'));
 
 });
